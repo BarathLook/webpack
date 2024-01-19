@@ -1,0 +1,10 @@
+import cameraImage from "./camera.jpg"
+
+function addImage(){
+    const img =  document.createElement('img')
+    img.src = cameraImage;
+    const body = document.querySelector('body')
+    body.append(img);
+}
+
+export default addImage;

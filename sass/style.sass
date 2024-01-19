@@ -1,0 +1,42 @@
+$primary-color: #3498db;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@function calculate-width($container-width, $columns) {
+  @return ($container-width / $columns) - 20px;
+}
+
+%base-button {
+  display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.button {
+  @extend %base-button;
+  background-color: $primary-color;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+
+  .column {
+    width: calculate-width(960px, 3);
+  }
+}
+
+.header {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px;
+
+  h1 {
+    font-size: 24px;
+  }
+}
